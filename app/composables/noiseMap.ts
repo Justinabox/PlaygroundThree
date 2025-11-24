@@ -30,7 +30,7 @@ export class NoiseMap {
         const position = this.chunker.keyToPosition(chunkPosition);
         if (!position) return;
         if (position.x < startChunk.x || position.x > endChunk.x || position.y < startChunk.y || position.y > endChunk.y) {
-          // console.log('removing chunk', position.x, position.y);
+          console.log('removing chunk', position.x, position.y);
           if (chunk.mesh) this.scene.value.remove(chunk.mesh);
           this.chunker.getChunks().delete(chunkPosition);
         }
@@ -55,7 +55,7 @@ export class NoiseMap {
         for (let y = startChunk.y; y <= endChunk.y; y++) {
           const chunkPosition = new Vector2(x, y);
           if (this.chunker.ifChunkExists(chunkPosition)) continue;
-          // console.log('generating chunk', x, y);
+          console.log('generating chunk', x, y);
           this.generateChunk(chunkPosition);
         }
       }

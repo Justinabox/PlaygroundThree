@@ -11,6 +11,7 @@
         "alea": "^1.0.1",
         "nuxt": "^4.2.1",
         "simplex-noise": "^4.0.3",
+        "spessasynth_lib": "^4.0.18",
         "tailwindcss": "^4.1.17",
         "three": "^0.181.0",
         "three-stdlib": "^2.36.0",
@@ -1223,6 +1224,10 @@
     "source-map-support": ["source-map-support@0.5.21", "", { "dependencies": { "buffer-from": "^1.0.0", "source-map": "^0.6.0" } }, "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w=="],
 
     "speakingurl": ["speakingurl@14.0.1", "", {}, "sha512-1POYv7uv2gXoyGFpBCmpDVSNV74IfsWlDW216UPjbWufNf+bSU6GdbDsxdcxtfwb4xlI3yxzOTKClUosxARYrQ=="],
+
+    "spessasynth_core": ["spessasynth_core@4.0.23", "", {}, "sha512-pnVSMUbdikovZBiV2Z0wNvfze0gy+i08D8Y04xdCgUZyaORamVSsgz/WuSigb/mRBjqWXryYxIJx+DU/WcaZ7g=="],
+
+    "spessasynth_lib": ["spessasynth_lib@4.0.18", "", { "dependencies": { "spessasynth_core": "latest" } }, "sha512-nTvC+Bf/Jt4DpzL54DeiWTWXFeWdUwkBwBR1T3O8kg7T9F+Dve0N49i2+XQNBwaGzKE0j0yGfL9RTVvQK0SGRw=="],
 
     "srvx": ["srvx@0.9.5", "", { "bin": { "srvx": "bin/srvx.mjs" } }, "sha512-nQsA2c8q3XwbSn6kTxVQjz0zS096rV+Be2pzJwrYEAdtnYszLw4MTy8JWJjz1XEGBZwP0qW51SUIX3WdjdRemQ=="],
 

@@ -29,7 +29,7 @@ onBeforeRender(({ delta }) => {
     <TresDirectionalLight :position="[1, 2, 3]" :intensity="3"/>
     <TresAmbientLight :intensity="1" />
     <MapControls :position="[0, 2.5, 0]"/>
-    <TresFog :color="0x000000" :near="1" :far="20" />
+    <!-- <TresFog :color="0x000000" :near="1" :far="20" />  -->
 
     <!-- <TresGroup :rotation-y="angle">
         <TresMesh :position="[-1, 0.1, 1]">
