@@ -24,6 +24,10 @@ export class NoiseMap {
     }
   
     trimChunks() {
+      /**
+       * Trims the chunks that are outside the range
+       */
+      
       const { startChunk, endChunk } = this.getChunkBounds();
   
       this.chunker.getChunks().forEach((chunk, chunkPosition) => {
@@ -38,6 +42,10 @@ export class NoiseMap {
     }
   
     getChunkBounds() {
+      /**
+       * @returns The start and end chunk bounds
+       */
+      
       const start = new Vector2((-this.range + this.center.x) * this.segments, (-this.range + this.center.y) * this.segments);
       const end = new Vector2((this.range + this.center.x) * this.segments, (this.range + this.center.y) * this.segments);
       // console.log(start, end);
@@ -49,6 +57,10 @@ export class NoiseMap {
     }
   
     refreshChunks() {
+      /**
+       * Generates and trims the chunks that are within the range
+       */
+      
       const { startChunk, endChunk } = this.getChunkBounds();
   
       for (let x = startChunk.x; x <= endChunk.x; x++) {
@@ -64,11 +76,21 @@ export class NoiseMap {
     }
   
     updateCenter(center: Vector2) {
+      /**
+       * Updates the center of the generation range
+       * @param center - The new center
+       */
+      
       this.center = center;
       this.refreshChunks();
     }
   
     private getNoiseLevel(noise: number): number | undefined {
+      /**
+       * @param noise - The noise value
+       * @returns The height of the terrain at the given noise value
+       */
+      
       if (noise > 0.87 && noise < 0.9) {
         return 2;
       } else if (noise > 0.77 && noise < 0.8) {
@@ -85,6 +107,11 @@ export class NoiseMap {
     }
   
     generateChunk(chunkPosition: Vector2) {
+      /**
+       * Generates a chunk at the given position
+       * @param chunkPosition - The position of the chunk
+       */
+      
       const [start, end] = this.chunker.translateChunkToPositions(chunkPosition);
   
       const chunk: Chunk = {points: Array(Array())}
