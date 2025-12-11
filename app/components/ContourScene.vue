@@ -6,7 +6,7 @@ import { NoiseMap } from '../composables/noiseMap'
 const {camera, renderer, scene} = useTres()
 console.log(useTres())
 const { onBeforeRender } = useLoop()
-const noiseMap = new NoiseMap('my-seed', scene);
+const noiseMap = new NoiseMap('my-seed', 0.2, 32, 20, scene);
 const angle = ref(0)
 onBeforeRender(({ delta }) => {
   // console.log(camera.value?.position)
@@ -29,7 +29,7 @@ onBeforeRender(({ delta }) => {
     <TresDirectionalLight :position="[1, 2, 3]" :intensity="3"/>
     <TresAmbientLight :intensity="1" />
     <MapControls :position="[0, 2.5, 0]"/>
-    <TresFog :color="0x000000" :near="1" :far="20" /> 
+    <TresFog :color="0x000000" :near="1" :far="25" /> 
 
     <!-- <TresGroup :rotation-y="angle">
         <TresMesh :position="[-1, 0.1, 1]">

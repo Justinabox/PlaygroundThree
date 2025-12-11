@@ -10,7 +10,7 @@ export class NoiseMap {
     private segments: number = 32;
     private scale: number = 0.2;
     private center: Vector2 = new Vector2(0, 0);
-    private range: number = 15;
+    private range: number = 20;
     private chunker: Chunker = new Chunker(128);
     private scene: Ref<TresScene>;
     private meshCount: number = 0;
@@ -18,9 +18,12 @@ export class NoiseMap {
     private box = new BoxGeometry(1 / this.segments, 1 / this.segments, 1 / this.segments);
     private material = new MeshStandardMaterial({ color: 'white' });
   
-    constructor(seed: string, scene: Ref<TresScene>) {
+    constructor(seed: string, scale: number, segments: number, range: number, scene: Ref<TresScene>) {
       this.noiseFunction = createNoise2D(alea(seed));
       this.scene = scene;
+      this.scale = scale;
+      this.segments = segments;
+      this.range = range;
     }
   
     trimChunks() {
