@@ -38,8 +38,8 @@
             </div>
     
             <TresCanvas>
-                <TresPerspectiveCamera :position="[-1, 6, -1]" :look-at="[2, 1.5, 3]" />
-                <LuminScene :midi="midi"/>
+                <TresPerspectiveCamera :position="[0, 7.5, -2]" :look-at="[2, 1.5, 3]" />
+                <LuminScene :midi="midi" />
             </TresCanvas>
         </div>
     </template>
