@@ -40,7 +40,7 @@
                 const material = new MeshPhysicalMaterial({ color: new Color().setHSL(event.midiNote / 128, 1, event.velocity / 128), opacity: 0.8, transparent: true })
                 const mesh = new Mesh(box, material)
                 mesh.position.x = (event.midiNote / 10) - 6.4
-                mesh.position.y = event.velocity / 50 + 3
+                mesh.position.y = event.velocity / 100 + 3
                 mesh.position.z = movementDelta.value + 1
                 mesh.translateZ(-delta * 0.05)
                 scene.value.add(mesh)
