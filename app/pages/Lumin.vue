@@ -3,6 +3,7 @@
     let midi: Midi = new Midi()
     
     const playing = ref(false)
+    const controlsRef = ref<HTMLElement | null>(null)
     
     onMounted(async () => {
         await midi.create("game_minecraft")
@@ -14,7 +15,7 @@
     <template>
         <div class="w-full h-screen">
             <!-- Translate to center -->
-            <div class="absolute bottom-4 left-1/2 z-10 gap-2 flex -translate-x-1/2">
+            <div ref="controlsRef" class="absolute bottom-4 left-1/2 z-10 gap-2 flex -translate-x-1/2 items-center">
                 <button @click="midi.toggle(); playing = !playing" class="backdrop-blur-xs bg-stone-100/12 text-white px-4 py-2 rounded-md">{{ playing ? 'Pause' : 'Play' }}</button>
                 <select @change="midi.loadMidi(($event.target as HTMLSelectElement).value)" class="backdrop-blur-xs bg-stone-100/12 text-white px-4 py-2 rounded-md">
                     <option value="big-fish">Big Fish</option>
@@ -39,7 +40,7 @@
     
             <TresCanvas>
                 <TresPerspectiveCamera :position="[0, 7.5, -2]" :look-at="[2, 1.5, 3]" />
-                <LuminScene :midi="midi" />
+                <LuminScene :midi="midi" :xr-button-target="controlsRef" />
             </TresCanvas>
         </div>
     </template>
